@@ -1,0 +1,383 @@
+/* PENGATURAN DASAR */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --blue: #053774;
+    --blue-dark: #174779;
+    --page: #e8f1ff;
+    --card: #ffffff;
+    --soft-blue: #edf4ff;
+    --text: #182b45;
+    --muted-red: #d17583;
+    --muted-red-light: #f1dfe2;
+}
+
+body {
+    min-height: 100vh;
+    padding: 28px;
+    background: #e9eef6;
+    color: var(--text);
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+/* DASHBOARD */
+.dashboard {
+    width: min(1450px, 100%);
+    min-height: 720px;
+    margin: 0 auto;
+    padding: 24px;
+    border-radius: 16px;
+    background: var(--page);
+    box-shadow: 0 12px 35px rgba(25, 55, 95, .12);
+}
+
+/* HEADER */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.topbar h2 {
+    color: #174779;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.topbar input {
+    width: 290px;
+    padding: 10px 14px;
+    border: 1px solid #a9c5e9;
+    border-radius: 7px;
+    outline: none;
+    background: #fff;
+    font-family: inherit;
+    font-size: 11px;
+}
+
+.topbar input:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(7, 85, 181, .1);
+}
+
+/* LAYOUT UTAMA */
+.layout {
+    display: grid;
+    grid-template-columns: 245px minmax(0, 1fr);
+    gap: 20px;
+}
+
+/* SIDEBAR */
+.sidebar {
+    min-height: 620px;
+    padding: 18px 0;
+    border-radius: 4px;
+    background: var(--blue);
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nav-link {
+    display: block;
+    padding: 14px 18px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: .2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: var(--blue-dark);
+}
+
+.nav-link:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: -4px;
+}
+
+.nav-link.sign-out {
+    margin-top: 15px;
+    color: #ff9a70;
+}
+
+/* KONTEN UTAMA */
+.main-content {
+    min-width: 0;
+}
+
+/* WELCOME CARD */
+.welcome-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 145px;
+    margin-bottom: 18px;
+    padding: 20px 25px;
+    border-radius: 5px;
+    background: var(--blue);
+    color: white;
+}
+
+.welcome-card h1 {
+    font-size: clamp(18px, 2vw, 25px);
+    line-height: 1.35;
+}
+
+.welcome-card h2 {
+    margin-top: 2px;
+    font-size: 21px;
+}
+
+.welcome-card p {
+    max-width: 650px;
+    margin-top: 10px;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* FOTO PROFIL */
+.avatar {
+    flex: 0 0 82px;
+    width: 82px;
+    height: 82px;
+    overflow: hidden;
+    border: 3px solid #fff;
+    border-radius: 50%;
+}
+
+.avatar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* GRID KONTEN */
+.content-grid {
+    display: grid;
+    grid-template-columns:
+        minmax(260px, 1.35fr)
+        minmax(160px, .8fr)
+        minmax(220px, 1fr);
+    gap: 14px;
+}
+
+/* KARTU */
+.panel {
+    min-width: 0;
+    padding: 15px;
+    border-radius: 5px;
+    background: var(--card);
+    box-shadow: 0 3px 12px rgba(35, 67, 110, .05);
+    transition: background .25s ease, color .25s ease;
+}
+
+.panel h3 {
+    margin-bottom: 13px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* STATISTIK */
+.statistic {
+   background:rgb(246, 247, 247);
+   padding: 13px;
+   border-radius: 8px;
+   box-shadow: 0 3px 10px #adb3e2;
+   transition: 0.3s;
+   display: flex;
+}
+  
+
+.statistic img {
+    width: 380px;
+    height: 380px;
+   
+
+    
+}
+/* PROGRES KELAS DAN AKTIVITAS */
+.info-card,
+.activity-card {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-bottom: 9px;
+    padding: 12px;
+    border-radius: 6px;
+    background: var(--soft-blue);
+    font-size: 10px;
+    transition: background .25s ease, color .25s ease;
+}
+
+.info-card b,
+.activity-card b {
+    font-weight: 600;
+}
+
+.info-card span,
+.activity-card span {
+    color: #0755b5;
+    font-size: 9px;
+    font-weight: 500;
+}
+
+/* LAMPIRAN DOKUMEN */
+.attachments-panel {
+    grid-column: 1 / -1;
+}
+
+.attachments-panel h3 {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.document-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 8px;
+    padding: 13px 15px;
+    border-radius: 5px;
+    background: var(--soft-blue);
+    font-size: 9px;
+    transition: background .25s ease, color .25s ease;
+}
+
+.document-row a {
+    flex-shrink: 0;
+    color: #0755b5;
+    font-weight: 700;
+}
+
+.document-row a:hover {
+    color: #003879;
+}
+
+/* PERUBAHAN WARNA MERAH GELAP */
+.progress-panel.red-mode,
+.activities-panel.red-mode,
+.attachments-panel.red-mode, 
+.statistic.red-mode{
+    background: var(--muted-red);
+    color: #fff;
+}
+
+.progress-panel.red-mode .info-card,
+.activities-panel.red-mode .activity-card,
+.attachments-panel.red-mode .document-row {
+    background: var(--muted-red-light);
+    color: #542630;
+}
+
+.progress-panel.red-mode .info-card span,
+.activities-panel.red-mode .activity-card span,
+.attachments-panel.red-mode .document-row  {
+    color: #b36e79;
+}
+
+/* RESPONSIVE TABLET */
+@media (max-width: 1050px) {
+    .layout {
+        grid-template-columns: 190px minmax(0, 1fr);
+    }
+
+    .content-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .statistics {
+        grid-row: span 2;
+    }
+
+    .attachments-panel {
+        grid-column: 1 / -1;
+    }
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 700px) {
+    body {
+        padding: 12px;
+    }
+
+    .dashboard {
+        padding: 14px;
+    }
+
+    .topbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .topbar input {
+        width: 100%;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        min-height: auto;
+        padding: 8px;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 3px;
+    }
+
+    .nav-link {
+        padding: 10px 12px;
+        border-radius: 4px;
+        font-size: 11px;
+    }
+
+    .nav-link.sign-out {
+        margin-top: 0;
+    }
+
+    .welcome-card {
+        padding: 17px;
+    }
+
+    .avatar {
+        flex-basis: 62px;
+        width: 62px;
+        height: 62px;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .statistics {
+        grid-row: auto;
+    }
+
+    .attachments-panel {
+        grid-column: auto;
+    }
+
+    .document-row {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
